@@ -117,4 +117,22 @@ $(document).ready(function() {
 
         $('#5pm').val(storedTodos)
     }
+
+    var time = ['9', '10', '11', '12', '13', '14', '15', '16', '17']
+
+    function currentTime() {
+        var current = moment().format('H')
+        for(var i = 0; i < time.length; i++) {
+            if(parseInt(time[i]) > current) {
+                $('#' + time[i]).attr('style', 'background-color: green')
+            }
+            else if(parseInt(time[i]) == current) {
+                $('#' + time[i]).attr('style', 'background-color: red')
+            }
+            else if(parseInt(time[i]) == current) {
+                $('#' + time)[i].attr('style', 'background-color: grey')
+            }
+            currentTime()
+        }
+    }
 })
